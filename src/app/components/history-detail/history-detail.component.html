@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Rule of Dress</title>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <p class="sans-serif"> Rule of Dress</p>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2 sidenav ">
+                <ul>
+                    <br>
+                    <li><a href="#">เช็คชื่อนิสิต</a></li>
+                    <br>
+                    <li class="active"><a href="history">ประวัติการเช็คชื่อนิสิต</a></li>
+
+                </ul>
+            </div>
+            <div class="col-sm-10 ">
+                <h2>รายชื่อนิสิตที่เข้าชั้นเรียน</h2>
+
+
+
+                <table id="detail">
+                    <tr>
+                        <th>ลำดับ</th>
+                        <th>ชื่อ - นามสกุล</th>
+                        <th>ผลการประเมิน</th>
+
+
+
+                    </tr>
+                    <tr *ngFor="let item of students;index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.res}}</td>
+                    </tr>
+
+
+
+                </table>
+
+
+                <!-- <p>All list student</p>
+                <ol>
+                    <li *ngFor="let item of mDataArray">{{item.username}} : {{item:feed}}</li>
+                </ol> -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <p>Informatics, Burapha University</p>
+    </footer>
+</body>
+
+</html>
