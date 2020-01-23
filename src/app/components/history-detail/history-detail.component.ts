@@ -10,9 +10,9 @@ import {ActivatedRoute} from '@angular/router'
 export class HistoryDetailComponent implements OnInit {
 
   constructor(private router : ActivatedRoute) { }
-stuName:any
-stuRes:any
-students = []
+  stuName:any
+  stuRes:any
+  students = []
 
   ngOnInit() {
   //   this.router.params.subscribe(params => {

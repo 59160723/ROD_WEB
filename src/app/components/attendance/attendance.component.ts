@@ -27,22 +27,13 @@ export class AttendanceComponent implements OnInit {
   student = []
 
   constructor(private http: HttpClient, private fb: FormBuilder, private stuService: StudentService ,private router : Router) {
-    this.createForm();
   }
 
 
-  createForm() {
-    this.angForm = this.fb.group({
-      subjectID: [''],
-      subjectName: [''],
-      subjectGroup: [''],
-      classroom: [''],
-      term: ['']
-    });
-  }
 
 
-  onClickSubmit(formData) {
+
+  async onClickSubmit(formData) {
     this.subjectID = formData.subjectID
     this.subjectName = formData.subjectName
     this.subjectGroup = formData.subjectGroup
@@ -51,6 +42,14 @@ export class AttendanceComponent implements OnInit {
     this.startAtten = true
     this.readonlyStatus = true
     this.showBtn = false
+    try {
+      if(this.showBtn == false ){
+        await this.stuService.ledStatus('on')
+      }
+       
+    } catch (err) {
+      console.log(err);
+    }
   }
   async stopAtten() {
     let date = new Date()
@@ -65,7 +64,9 @@ export class AttendanceComponent implements OnInit {
       dateTime: dateTime
     }
     try {
+      this.showBtn = true
       await this.stuService.insertAttendance(data)
+      await this.stuService.ledStatus('off')
     } catch (err) {
       console.log(err);
     }
@@ -75,7 +76,7 @@ export class AttendanceComponent implements OnInit {
   }
 
   ngOnInit() {
-    const socket = socketIo('http://192.168.1.2:3000')
+    const socket = socketIo('http://localhost:3000')
     socket.on('studentData', async (data) => {
       console.log(data)
       if (this.startAtten) {

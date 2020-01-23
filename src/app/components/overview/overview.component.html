@@ -21,77 +21,62 @@
             <div class="col-sm-2 sidenav ">
                 <ul>
                     <br>
-                    <li class="active"><a href="#">เช็คชื่อนิสิต</a></li>
+                    <li><a href="#">เช็คชื่อนิสิต</a></li>
                     <br>
                     <li><a href="history">ประวัติการเช็คชื่อนิสิต</a></li>
                     <br>
-                    <li><a href="overview">ผลการเช็คชื่อนิสิต</a></li>
-
+                    <li class="active"><a href="overview">ผลการเช็คชื่อนิสิต</a></li>
                 </ul>
             </div>
             <div class="col-sm-10 ">
-                <h2>ระบบเช็คชื่อและเช็คเครื่องแต่งกายออนไลน์</h2>
+                <h2>ตรวจสอบผลการเช็คชื่อนิสิต</h2>
 
                 <form #login="ngForm" (ngSubmit)="onClickSubmit(login.value)">
                     <div class="form">
                         <div class="form-group">
 
-                            <div class="col-sm-2">
+                            <div class="col-sm-3">
                                 <label for="subjectID">รหัสวิชา
                                 <input ngModel type="text" name="subjectID" class="form-control " id="subjectID" placeholder="88723059" [readonly]="readonlyStatus" required>
-                        </label>
+                                </label>
                             </div>
+
                             <div class="col-sm-3">
-                                <label for="subjectName">ชื่อวิชา
-                                <input ngModel type="text" name="subjectName" class="form-control " id="subjectName" placeholder="Internet of Thing" [readonly]="readonlyStatus" required>
-                        </label>
-                            </div>
-                            <div class="col-sm-2">
                                 <label for="subjectGroup">กลุ่มเรียน
                                 <input ngModel type="number" name="subjectGroup" class="form-control" id="subjectGroup" placeholder="0" min="1" [readonly]="readonlyStatus" required>
-                        </label>
+                                </label>
                             </div>
-                            <div class="col-sm-2">
-                                <label for="classroom">ห้องเรียน
-                                <input ngModel type="text" name="classroom" class="form-control" id="classroom" placeholder="IF 204" [readonly]="readonlyStatus" required>
-                        </label>
-                            </div>
-                            <div class="col-sm-2">
+
+                            <div class="col-sm-3">
                                 <label for="term">ภาคเรียน
                                 <input ngModel type="text" name="term" class="form-control " id="term" placeholder="2/2562" [readonly]="readonlyStatus" required>
-                        </label>
+                                </label>
                             </div>
-                        </div>
 
-                        <div class="btnStart" style="text-align:center;" *ngIf="showBtn">
-                            <button type="submit">เริ่มการเช็คชื่อ </button>
-                        </div>
-                        <div style="text-align:center;" *ngIf="!showBtn">
-                            <button class="btnStop" (click)="stopAtten()">สิ้นสุดการเช็คชื่อ</button>
                         </div>
 
 
+                        <div class="btnStart" style="text-align:center;">
+                            <button type="submit">ดูผลเช็คชื่อ </button>
+                        </div>
 
                     </div>
                 </form>
                 <br><br>
-                <table id="detail">
-                    <tr>
-                        <th>ลำดับ</th>
-                        <th>ชื่อ - นามสกุล</th>
-                        <th>ผลการประเมิน</th>
-                    </tr>
-                    <tr *ngFor="let item of student;index as i">
-                        <td>{{i+1}}</td>
-                        <td>{{item.name}}</td>
-                        <td>{{item.resDress}}</td>
-                    </tr>
-                </table>
+
+                <div *ngIf="showGraph" style="text-align:center;">
+                    <h1>เช็คชื่อทั้งหมด: {{totalAtten}} ครั้ง</h1>
+                </div>
+
+                <div>
+                    <canvas id="myChart"></canvas>
+
+                </div>
             </div>
         </div>
     </div>
 
-    <footer class="container-fluid">
+    <footer class="container-fluid ">
         <p>Informatics, Burapha University</p>
     </footer>
 </body>

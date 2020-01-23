@@ -24,6 +24,8 @@
                     <li><a href="#">เช็คชื่อนิสิต</a></li>
                     <br>
                     <li class="active"><a href="history">ประวัติการเช็คชื่อนิสิต</a></li>
+                    <br>
+                    <li><a href="overview">ผลการเช็คชื่อนิสิต</a></li>
 
                 </ul>
             </div>
@@ -52,6 +54,9 @@
                         <td>{{item.classroom}}</td>
                         <td>{{item.term}}</td>
                         <div style="text-align:center;">
+                            <button (click)="goDetail(item.student)" class="btn btn-info btn-lg">
+                                <span class="glyphicon glyphicon-list-alt"></span> ดูรายละเอียด
+                            </button >
                             <button (click)="goDetail(item.student)" class="btn btn-info btn-lg">
                                 <span class="glyphicon glyphicon-list-alt"></span> ดูรายละเอียด
                             </button >

@@ -1,0 +1,142 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+footer {
+    background-color: rgb(199, 19, 19);
+    color: white;
+    padding: 15px;
+}
+
+header {
+    background-color: rgb(199, 19, 19);
+    color: white;
+}
+
+
+/*front */
+
+h2 {
+    margin: 10px;
+}
+
+p.sans-serif {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.875em;
+}
+
+p {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1em;
+}
+
+
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
+.row.content {
+    height: 1500px
+}
+
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        background-color: #fffcf5;
+        padding: 50px;
+    }
+    .row.content {
+        height: auto;
+    }
+}
+
+
+/*list*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* width: 200px; */
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+
+/* Change the link color on hover */
+
+li a:hover {
+    background-color: rgb(199, 19, 19);
+    color: white;
+}
+
+li.active {
+    background-color: rgb(199, 19, 19);
+    color: white;
+}
+
+li.active a {
+    background-color: rgb(199, 19, 19);
+    color: rgb(255, 255, 255);
+}
+
+
+/* form */
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type=submit] {
+    width: 80%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div.form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+
+/* button Result */

@@ -9,6 +9,7 @@ import { AttendanceComponent } from './components/attendance/attendance.componen
 import { HistoryComponent } from './components/history/history.component';
 import { HistoryDetailComponent } from './components/history-detail/history-detail.component';
 import { RouterModule } from '@angular/router';
+import { OverviewComponent } from './components/overview/overview.component';
 
 //import { from } from 'rxjs';
 
@@ -19,8 +20,9 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     AttendanceComponent,
     HistoryComponent,
-    HistoryDetailComponent
-  ],
+    HistoryDetailComponent,
+    OverviewComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +33,7 @@ import { RouterModule } from '@angular/router';
       { path: '', component: AttendanceComponent },
       { path: 'history', component: HistoryComponent },
       { path: 'historyDetail', component: HistoryDetailComponent },
+      { path: 'overview', component: OverviewComponent}
     ])
   ],
   providers: [],

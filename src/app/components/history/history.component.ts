@@ -10,16 +10,7 @@ import {Router} from '@angular/router'
 })
 export class HistoryComponent implements OnInit {
   title = 'rod-web';
-  // subjectID: any
-  // subjectName: any
-  // subjectGroup: any
-  // classroom: any
-  // term: any
-
-  
   attendance =[]
-
-
 
   constructor(private stuService: StudentService,private router : Router ) { }
 
@@ -27,9 +18,8 @@ export class HistoryComponent implements OnInit {
     (await this.stuService.getAttendance()).subscribe(res => {
       this.attendance = res
     });
-
-
   }
+  
   goDetail(stu){
     let name = []
     let resDress = []
